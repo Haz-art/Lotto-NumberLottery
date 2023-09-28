@@ -1,6 +1,5 @@
 import 'package:first_app/random_1_9.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class RollDice extends StatefulWidget {
   const RollDice({super.key});
