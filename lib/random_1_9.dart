@@ -12,7 +12,6 @@ class RollNumber extends StatefulWidget {
 }
 
 final custom = Random();
-
 var randomNumber = 1;
 
 class _RollNumberState extends State<RollNumber> {
@@ -27,10 +26,18 @@ class _RollNumberState extends State<RollNumber> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Center(
-          child: Text('$randomNumber', style: const TextStyle(fontSize: 40)),
+          child: Text(
+            '$randomNumber',
+            style: const TextStyle(fontSize: 40),
+          ),
         ),
         Center(
           child: ElevatedButton(
+            style: const ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll<Color>(
+                Color.fromARGB(255, 192, 47, 31),
+              ),
+            ),
             onPressed: RollNumber,
             child: const Text("Losuj"),
           ),

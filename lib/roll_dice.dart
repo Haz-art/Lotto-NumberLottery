@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class RollDice extends StatefulWidget {
-  const RollDice(this.maxNumber, {super.key});
-  final int maxNumber;
+  const RollDice({super.key});
 
   @override
   State<RollDice> createState() {
@@ -12,45 +11,34 @@ class RollDice extends StatefulWidget {
   }
 }
 
-final custom = Random();
-
-var diceDots = 1;
-
 class _RollDiceState extends State<RollDice> {
-  void rollDice() {
-    diceDots = custom.nextInt(widget.maxNumber) + 1; // <1,49>
-    setState(() {});
-  }
-
   @override
   Widget build(context) {
-    return Column(
+    return const Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Center(
-          child: Text('$diceDots', style: const TextStyle(fontSize: 40)),
+        Text(
+          "LOTTO",
+          style: TextStyle(
+            fontSize: 80,
+          ),
         ),
-        //Center(
-        //  child: ElevatedButton(
-        //    onPressed: rollDice,
-        //    child: const Text("Losuj"),
-        //  ),
-        //),
-        const Center(
+        SizedBox(height: 180),
+        Center(
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: EdgeInsets.all(12.0),
             child: RollNumber(49),
           ),
         ),
-        const Row(
+        Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.all(28.0),
               child: RollNumber(9),
             ),
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.all(28.0),
               child: RollNumber(9),
             ),
           ],
